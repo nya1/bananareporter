@@ -5,9 +5,9 @@ Create a report in CSV, JSON/L from multiple sources (e.g. GitLab, GitHub, todo.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/bananareporter.svg)](https://npmjs.org/package/bananareporter)
-[![CircleCI](https://circleci.com/gh/oclif/hello-world/tree/main.svg?style=shield)](https://circleci.com/gh/oclif/hello-world/tree/main)
+[![GitHub](https://github.com/nya1/bananareporter/actions/workflows/test.yml/badge.svg)](https://github.com/nya1/bananareporter/actions/workflows/test.yml)
 [![Downloads/week](https://img.shields.io/npm/dw/bananareporter.svg)](https://npmjs.org/package/bananareporter)
-[![License](https://img.shields.io/npm/l/bananareporter.svg)](https://github.com/oclif/hello-world/blob/main/package.json)
+[![License](https://img.shields.io/npm/l/bananareporter.svg)](https://github.com/nya1/bananareporter/blob/main/package.json)
 
 <!-- toc -->
 * [Features](#features)

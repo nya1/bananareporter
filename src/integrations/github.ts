@@ -304,7 +304,7 @@ export class GithubIntegration extends IntegrationBase {
       logger.debug(`github integration getUserCommits from ${from} to ${to}`)
 
       const page = options.page ?? 1
-      const url = '/search/commits';
+      const url = '/search/commits'
       const commits = await this.httpRequest<GithubCommitResponseData>(url, {
         params: {
           q: `committer:${username} committer-date:${from}..${to}`,

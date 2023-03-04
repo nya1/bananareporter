@@ -295,6 +295,11 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@lggruspe/todo-txt-parser@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@lggruspe/todo-txt-parser/-/todo-txt-parser-1.1.1.tgz#0031bdf6766b7ce51a85e4fcd28c0cceb79ea6ad"
+  integrity sha512-wdSGCJs/oBZtEOt14lyJof93NPbJN8SyToQkgS/CP4+yY/2z55TT+IBUnQigCUmCp7g9qgiFb2PwfFY4T8zmdA==
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"

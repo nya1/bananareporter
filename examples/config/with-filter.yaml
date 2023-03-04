@@ -1,0 +1,8 @@
+
+sources:
+  - type: 'gitlab'
+    committerUsername: usernameOnGitlab
+    token: glpat-personalaccesstoken
+    filters:
+      - on: '$project.path_with_namespace'
+        regex: '(namespace|anotherone)'

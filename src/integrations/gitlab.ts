@@ -6,6 +6,7 @@ import {z} from 'zod'
 import axios, {AxiosInstance, AxiosRequestConfig} from 'axios'
 import dayjs = require('dayjs')
 import {logger} from '../util/logger'
+import objectPath = require('object-path');
 
 type GitlabRawEventData = { 'id': 123, 'project_id': 4, 'action_name': 'pushed to', 'target_id': null, 'target_iid': null, 'target_type': null, 'author_id': 333, 'target_title': null, 'created_at': '2022-01-03T16:29:13.384Z', 'author': { 'id': 333, 'username': 'testusername', 'name': 'Test', 'state': 'active', 'avatar_url': 'https://gitlab.com/uploads/-/system/user/avatar/333/avatar.png', 'web_url': 'https://gitlab.com/testusername' }, 'push_data': { 'commit_count': 2, 'action': 'pushed', 'ref_type': 'branch', 'commit_from': '314d57ea6ece959ffe94a5186abc67db0372dae2', 'commit_to': '7fec56814c69d22296c3e3e240763a0c759d3927', 'ref': 'branchname', 'commit_title': 'chore: commit msg', 'ref_count': null }, 'author_username': 'testusername' }
 
@@ -232,13 +233,14 @@ export class GitlabIntegration extends IntegrationBase {
           }
 
           const regex = new RegExp(filter.regex)
-          if (!(targetKey in e)) {
+          const value = objectPath.get(e, targetKey)
+          if (typeof value === 'undefined') {
             const errorMsg = `while filtering event id ${e.id} unable to find the key ${targetKey} in the event's object (available keys: ${Object.keys(e).join(',')})`
             logger.error(errorMsg)
             throw new Error(errorMsg)
           }
 
-          return regex.test(e[targetKey as keyof GitlabRawEventData] as string)
+          return regex.test(value)
         })
       }
 

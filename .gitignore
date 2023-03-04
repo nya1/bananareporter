@@ -12,3 +12,4 @@ oclif.manifest.json
 *.csv
 *.jsonl
 bananareporter.*
+todo.txt

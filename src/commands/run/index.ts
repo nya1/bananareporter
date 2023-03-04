@@ -9,6 +9,8 @@ import {GitlabIntegration} from '../../integrations/gitlab'
 import {unparse as jsonToCsv} from 'papaparse'
 import {omit} from 'lodash'
 import {logger} from '../../util/logger'
+import {GithubIntegration} from '../../integrations/github'
+import {TodoTxtIntegration} from '../../integrations/todotxt'
 
 export default class Run extends Command {
   static description = 'Run report'
@@ -101,10 +103,34 @@ report with 138 entries saved to ./bananareporter.json
       logger.debug(`run source loop ${i}`, s)
       this.log(`working on ${s.type} (${i + 1}) source`)
       let res: CommonBananaReporterObj[] = []
-      if (s.type === SourceType.Enum.gitlab) {
+      switch (s.type) {
+      case SourceType.Enum.gitlab: {
         const integrationLoaded = new GitlabIntegration(s, validatedConfig)
         // eslint-disable-next-line no-await-in-loop
         res = await integrationLoaded.fetchData()
+
+        break
+      }
+
+      case SourceType.Enum.github: {
+        const integrationLoaded = new GithubIntegration(s, validatedConfig)
+        // eslint-disable-next-line no-await-in-loop
+        res = await integrationLoaded.fetchData()
+
+        break
+      }
+
+      case SourceType.Enum['todo.txt']: {
+        const integrationLoaded = new TodoTxtIntegration(s, validatedConfig)
+        // eslint-disable-next-line no-await-in-loop
+        res = await integrationLoaded.fetchData()
+
+        break
+      }
+
+      default: {
+        this.error(`unknown source provided ${s.type}`)
+      }
       }
 
       logger.debug(`run source loop integration res length ${res.length}`)
@@ -130,7 +156,7 @@ report with 138 entries saved to ./bananareporter.json
       })
       outputStr = csvOutput
     } else if (validatedConfig.format === BananaOutputFileFormat.Enum.json) {
-      outputStr = JSON.stringify(reportList)
+      outputStr = JSON.stringify(reportList, null, 2)
     } else if (validatedConfig.format === BananaOutputFileFormat.Enum.jsonl) {
       logger.debug('run converting json to jsonl')
       outputStr = reportList.map(r => JSON.stringify(r)).join('\n')

@@ -6,3 +6,10 @@ sources:
     filters:
       - on: '$project.path_with_namespace'
         regex: '(namespace|anotherone)'
+  - type: 'github'
+    committerUsername: usernameOnGithub
+    # optional, needed to see commits made in private repositories
+    token: personalaccesstoken
+    filters:
+      - on: 'repository.full_name'
+        regex: '(namespace|anotherone)'

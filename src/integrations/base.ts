@@ -1,7 +1,7 @@
 import {z} from 'zod'
 import {BananaConfig} from '../core'
 
-export const SourceType = z.enum(['gitlab', 'github'])
+export const SourceType = z.enum(['gitlab', 'github', 'todo.txt'])
 export type SourceType = z.infer<typeof SourceType>;
 
 export interface CommonBananaReporterObj {

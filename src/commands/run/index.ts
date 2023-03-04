@@ -9,6 +9,7 @@ import {GitlabIntegration} from '../../integrations/gitlab'
 import {unparse as jsonToCsv} from 'papaparse'
 import {omit} from 'lodash'
 import {logger} from '../../util/logger'
+import { GithubIntegration } from '../../integrations/github';
 
 export default class Run extends Command {
   static description = 'Run report'
@@ -105,6 +106,12 @@ report with 138 entries saved to ./bananareporter.json
         const integrationLoaded = new GitlabIntegration(s, validatedConfig)
         // eslint-disable-next-line no-await-in-loop
         res = await integrationLoaded.fetchData()
+      } else if (s.type === SourceType.Enum.github) {
+        const integrationLoaded = new GithubIntegration(s, validatedConfig)
+        // eslint-disable-next-line no-await-in-loop
+        res = await integrationLoaded.fetchData()
+      } else {
+        this.error(`unknown source provided ${s.type}`)
       }
 
       logger.debug(`run source loop integration res length ${res.length}`)

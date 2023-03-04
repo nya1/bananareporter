@@ -1,6 +1,6 @@
 ---
 name: New source request
-about: Source name / website
+about: Request a new source
 title: ''
 labels: enhancement
 assignees: ''

@@ -17,6 +17,7 @@ Create a report in CSV, JSON/L from multiple sources (e.g. GitLab, GitHub, todo.
 - **Sources Supported**: GitLab, GitHub and todo.txt files, _more coming soon_
 
 <!-- toc -->
+* [Features](#features)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
@@ -36,58 +37,8 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`bananareporter hello PERSON`](#bananareporter-hello-person)
-* [`bananareporter hello world`](#bananareporter-hello-world)
 * [`bananareporter help [COMMANDS]`](#bananareporter-help-commands)
-* [`bananareporter plugins`](#bananareporter-plugins)
-* [`bananareporter plugins:install PLUGIN...`](#bananareporter-pluginsinstall-plugin)
-* [`bananareporter plugins:inspect PLUGIN...`](#bananareporter-pluginsinspect-plugin)
-* [`bananareporter plugins:install PLUGIN...`](#bananareporter-pluginsinstall-plugin-1)
-* [`bananareporter plugins:link PLUGIN`](#bananareporter-pluginslink-plugin)
-* [`bananareporter plugins:uninstall PLUGIN...`](#bananareporter-pluginsuninstall-plugin)
-* [`bananareporter plugins:uninstall PLUGIN...`](#bananareporter-pluginsuninstall-plugin-1)
-* [`bananareporter plugins:uninstall PLUGIN...`](#bananareporter-pluginsuninstall-plugin-2)
-* [`bananareporter plugins update`](#bananareporter-plugins-update)
-
-## `bananareporter hello PERSON`
-
-Say hello
-
-```
-USAGE
-  $ bananareporter hello PERSON -f <value>
-
-ARGUMENTS
-  PERSON  Person to say hello to
-
-FLAGS
-  -f, --from=<value>  (required) Who is saying hello
-
-DESCRIPTION
-  Say hello
-
-EXAMPLES
-  $ oex hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/index.ts)
-```
-
-_See code: [dist/commands/hello/index.ts](https://github.com/nya1/bananareporter/blob/v0.0.0/dist/commands/hello/index.ts)_
-
-## `bananareporter hello world`
-
-Say hello world
-
-```
-USAGE
-  $ bananareporter hello world
-
-DESCRIPTION
-  Say hello world
-
-EXAMPLES
-  $ bananareporter hello world
-  hello world! (./src/commands/hello/world.ts)
-```
+* [`bananareporter run`](#bananareporter-run)
 
 ## `bananareporter help [COMMANDS]`
 
@@ -109,236 +60,32 @@ DESCRIPTION
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.5/src/commands/help.ts)_
 
-## `bananareporter plugins`
+## `bananareporter run`
 
-List installed plugins.
+Run report
 
 ```
 USAGE
-  $ bananareporter plugins [--core]
+  $ bananareporter run -o <value> --format json|jsonl|csv [-c <value>] [--to <value> --from <value>]
+    [--delay <value>] [--include-raw-object]
 
 FLAGS
-  --core  Show core plugins.
+  -c, --config=<value>  config file location, by default ~/.config/bananareporter/config.yaml
+  -o, --out=<value>     (required) [default: ./bananareporter.json] file path to save the output
+  --delay=<value>       [default: 300] global delay in millisecons between http requests
+  --format=<option>     (required) [default: json] output file format
+                        <options: json|jsonl|csv>
+  --from=2023-03-01     from date (ISO8601)
+  --include-raw-object  include raw object in json/jsonl reporter output
+  --to=2023-03-31       to date (ISO8601)
 
 DESCRIPTION
-  List installed plugins.
+  Run report
 
 EXAMPLES
-  $ bananareporter plugins
+  $ banana-reporter run --from 2023-01-01 --to 2023-01-31
+  report with 138 entries saved to ./bananareporter.json
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.3.2/src/commands/plugins/index.ts)_
-
-## `bananareporter plugins:install PLUGIN...`
-
-Installs a plugin into the CLI.
-
-```
-USAGE
-  $ bananareporter plugins:install PLUGIN...
-
-ARGUMENTS
-  PLUGIN  Plugin to install.
-
-FLAGS
-  -f, --force    Run yarn install with force flag.
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Installs a plugin into the CLI.
-  Can be installed from npm or a git url.
-
-  Installation of a user-installed plugin will override a core plugin.
-
-  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
-  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
-  the CLI without the need to patch and update the whole CLI.
-
-
-ALIASES
-  $ bananareporter plugins add
-
-EXAMPLES
-  $ bananareporter plugins:install myplugin 
-
-  $ bananareporter plugins:install https://github.com/someuser/someplugin
-
-  $ bananareporter plugins:install someuser/someplugin
-```
-
-## `bananareporter plugins:inspect PLUGIN...`
-
-Displays installation properties of a plugin.
-
-```
-USAGE
-  $ bananareporter plugins:inspect PLUGIN...
-
-ARGUMENTS
-  PLUGIN  [default: .] Plugin to inspect.
-
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-GLOBAL FLAGS
-  --json  Format output as json.
-
-DESCRIPTION
-  Displays installation properties of a plugin.
-
-EXAMPLES
-  $ bananareporter plugins:inspect myplugin
-```
-
-## `bananareporter plugins:install PLUGIN...`
-
-Installs a plugin into the CLI.
-
-```
-USAGE
-  $ bananareporter plugins:install PLUGIN...
-
-ARGUMENTS
-  PLUGIN  Plugin to install.
-
-FLAGS
-  -f, --force    Run yarn install with force flag.
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Installs a plugin into the CLI.
-  Can be installed from npm or a git url.
-
-  Installation of a user-installed plugin will override a core plugin.
-
-  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
-  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
-  the CLI without the need to patch and update the whole CLI.
-
-
-ALIASES
-  $ bananareporter plugins add
-
-EXAMPLES
-  $ bananareporter plugins:install myplugin 
-
-  $ bananareporter plugins:install https://github.com/someuser/someplugin
-
-  $ bananareporter plugins:install someuser/someplugin
-```
-
-## `bananareporter plugins:link PLUGIN`
-
-Links a plugin into the CLI for development.
-
-```
-USAGE
-  $ bananareporter plugins:link PLUGIN
-
-ARGUMENTS
-  PATH  [default: .] path to plugin
-
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Links a plugin into the CLI for development.
-  Installation of a linked plugin will override a user-installed or core plugin.
-
-  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
-  command will override the user-installed or core plugin implementation. This is useful for development work.
-
-
-EXAMPLES
-  $ bananareporter plugins:link myplugin
-```
-
-## `bananareporter plugins:uninstall PLUGIN...`
-
-Removes a plugin from the CLI.
-
-```
-USAGE
-  $ bananareporter plugins:uninstall PLUGIN...
-
-ARGUMENTS
-  PLUGIN  plugin to uninstall
-
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Removes a plugin from the CLI.
-
-ALIASES
-  $ bananareporter plugins unlink
-  $ bananareporter plugins remove
-```
-
-## `bananareporter plugins:uninstall PLUGIN...`
-
-Removes a plugin from the CLI.
-
-```
-USAGE
-  $ bananareporter plugins:uninstall PLUGIN...
-
-ARGUMENTS
-  PLUGIN  plugin to uninstall
-
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Removes a plugin from the CLI.
-
-ALIASES
-  $ bananareporter plugins unlink
-  $ bananareporter plugins remove
-```
-
-## `bananareporter plugins:uninstall PLUGIN...`
-
-Removes a plugin from the CLI.
-
-```
-USAGE
-  $ bananareporter plugins:uninstall PLUGIN...
-
-ARGUMENTS
-  PLUGIN  plugin to uninstall
-
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Removes a plugin from the CLI.
-
-ALIASES
-  $ bananareporter plugins unlink
-  $ bananareporter plugins remove
-```
-
-## `bananareporter plugins update`
-
-Update installed plugins.
-
-```
-USAGE
-  $ bananareporter plugins update [-h] [-v]
-
-FLAGS
-  -h, --help     Show CLI help.
-  -v, --verbose
-
-DESCRIPTION
-  Update installed plugins.
-```
+_See code: [dist/commands/run/index.ts](https://github.com/nya1/bananareporter/blob/v0.0.0/dist/commands/run/index.ts)_
 <!-- commandsstop -->

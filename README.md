@@ -16,6 +16,40 @@ Create a report in CSV, JSON/L from multiple sources (e.g. GitLab, GitHub, todo.
 - **Configurable**: data to be imported can be filtered using the configuration file and each option can be overridden per source
 - **Sources Supported**: GitLab, GitHub and todo.txt files, _more coming soon_
 
+# Quickstart
+
+0. Install banana reporter CLI `npm i -g bananareporter`
+
+1. Create a config file `bananareporter.yaml` with the sources that you want to fetch
+
+```yaml
+sources:
+  - type: 'gitlab'
+    committerUsername: usernameOnGitlab
+    token: glpat-personalaccesstoken
+    # filters:
+    #   - on: '$project.path_with_namespace'
+    #     regex: '(namespace|anotherone)'
+  - type: 'github'
+    committerUsername: usernameOnGithub
+    # optional, needed for commits on private repositories
+    token: personalaccesstoken
+    # filters:
+    #   - on: 'repository.full_name'
+    #     regex: '(namespace|anotherone)'
+  # - type: 'todo.txt'
+  #   file: './todo.txt'
+```
+
+2. Run the reporter with a date range
+
+```sh
+bananareporter --from 2023-01-01 --to 2023-03-01 -c bananareporter.yaml
+```
+
+In the current directory you can find the `bananareporter.json` output
+
+
 <!-- toc -->
 * [Features](#features)
 * [Usage](#usage)

@@ -9,6 +9,13 @@ Create a report in CSV, JSON/L from multiple sources (e.g. GitLab, GitHub, todo.
 [![Downloads/week](https://img.shields.io/npm/dw/bananareporter.svg)](https://npmjs.org/package/bananareporter)
 [![License](https://img.shields.io/npm/l/bananareporter.svg)](https://github.com/oclif/hello-world/blob/main/package.json)
 
+<!-- toc -->
+* [Features](#features)
+* [Quickstart](#quickstart)
+* [Usage](#usage)
+* [Commands](#commands)
+<!-- tocstop -->
+
 # Features
 
 - **Easy to use**: provide a `--from` and `--to` date range and a config file, all data will be fetched automatically
@@ -50,11 +57,6 @@ bananareporter --from 2023-01-01 --to 2023-03-01 -c bananareporter.yaml
 In the current directory you can find the `bananareporter.json` output
 
 
-<!-- toc -->
-* [Features](#features)
-* [Usage](#usage)
-* [Commands](#commands)
-<!-- tocstop -->
 # Usage
 <!-- usage -->
 ```sh-session
@@ -92,7 +94,7 @@ DESCRIPTION
   Display help for bananareporter.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.5/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.7/src/commands/help.ts)_
 
 ## `bananareporter run`
 

@@ -21,7 +21,16 @@ Create a report in CSV, JSON/L from multiple sources (e.g. GitLab, GitHub, todo.
 - **Easy to use**: provide a `--from` and `--to` date range and a config file, all data will be fetched automatically
 - **Multiple output formats**: output file can be a JSON, JSONL or CSV (via `--format`) _more coming soon_
 - **Configurable**: data to be imported can be filtered using the configuration file and each option can be overridden per source
-- **Sources Supported**: GitLab, GitHub and todo.txt files, _more coming soon_
+- **Sources Supported**
+  - GitLab: commits
+  - GitHub: commits
+  - todo.txt: tasks
+  - **[Request a new source](https://github.com/nya1/bananareporter/issues/new?assignees=&labels=enhancement&template=new-source-request.md&title=)**
+
+## Use cases
+
+- create a PDF work report based on commits and tasks
+- get insights on your activity 
 
 # Quickstart
 

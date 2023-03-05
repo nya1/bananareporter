@@ -1,7 +1,10 @@
-Banana Reporter
-=================
 
-Create a report in CSV, JSON/L from multiple sources (e.g. GitLab, GitHub, todo.txt etc.)
+<p align="center">
+<img src="docs/assets/banana-reporter-logo.png" alt="Banana Reporter Logo" height="70px"/>
+</p>
+<h1 align="center">Banana Reporter</h1>
+<p align="center">Create a report in CSV, JSON and JSONL from multiple sources (e.g. GitLab, GitHub, todo.txt etc.)</p>
+
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/bananareporter.svg)](https://npmjs.org/package/bananareporter)

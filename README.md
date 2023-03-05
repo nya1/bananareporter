@@ -5,12 +5,13 @@
 <h1 align="center">Banana Reporter</h1>
 <p align="center">Create a report in CSV, JSON and JSONL from multiple sources (e.g. GitLab, GitHub, todo.txt etc.)</p>
 
-
+<div align="center">
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/bananareporter.svg)](https://npmjs.org/package/bananareporter)
 [![GitHub](https://github.com/nya1/bananareporter/actions/workflows/test.yml/badge.svg)](https://github.com/nya1/bananareporter/actions/workflows/test.yml)
 [![Downloads/week](https://img.shields.io/npm/dw/bananareporter.svg)](https://npmjs.org/package/bananareporter)
 [![License](https://img.shields.io/npm/l/bananareporter.svg)](https://github.com/nya1/bananareporter/blob/main/package.json)
+</div>
 
 <!-- toc -->
 * [Features](#features)

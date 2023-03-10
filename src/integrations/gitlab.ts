@@ -202,7 +202,12 @@ export class GitlabIntegration extends IntegrationBase {
       // format data to common obj
       let filteredData = eventList
       .filter(e => {
-        return (e.action_name.startsWith('pushed') && !e.push_data.commit_title.startsWith('Merge branch'))
+        return (
+          e.action_name
+          .startsWith('pushed') &&
+          e?.push_data?.commit_title &&
+          !e.push_data.commit_title.startsWith('Merge branch')
+        )
       })
 
       const projectsToRemove = new Set<number>()

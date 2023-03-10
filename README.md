@@ -67,7 +67,7 @@ sources:
 bananareporter --from 2023-01-01 --to 2023-03-01 -c bananareporter.yaml
 ```
 
-In the current directory you can find the `bananareporter.json` output
+In the current directory you will find the output as `bananareporter_$FROM__$TO.json`, can be cahnged with `--out`
 
 
 # Usage
@@ -77,7 +77,7 @@ $ npm install -g bananareporter
 $ bananareporter COMMAND
 running command...
 $ bananareporter (--version)
-bananareporter/0.0.0 linux-x64 node-v16.19.0
+bananareporter/0.1.0 linux-x64 node-v16.19.0
 $ bananareporter --help [COMMAND]
 USAGE
   $ bananareporter COMMAND
@@ -136,5 +136,5 @@ EXAMPLES
   report with 138 entries saved to ./bananareporter.json
 ```
 
-_See code: [dist/commands/run/index.ts](https://github.com/nya1/bananareporter/blob/v0.0.0/dist/commands/run/index.ts)_
+_See code: [dist/commands/run/index.ts](https://github.com/nya1/bananareporter/blob/v0.1.0/dist/commands/run/index.ts)_
 <!-- commandsstop -->

@@ -52,7 +52,7 @@ report with 138 entries saved to ./bananareporter.json
       aliases: ['output'],
       description: 'file path to save the output',
       required: true,
-      default: './bananareporter.json',
+      default: './bananareporter_$FROM__$TO.json',
     }),
     format: Flags.string({
       description: 'output file format',
@@ -167,7 +167,10 @@ report with 138 entries saved to ./bananareporter.json
     // add file extension
     if (!outFile.endsWith(fileExt)) {
       if (outFile === Run.flags.out.default) {
-        outFile = outFile.replace(`.${Run.flags.format.default}`, fileExt)
+        outFile = outFile
+        .replace(`.${Run.flags.format.default}`, fileExt)
+        .replace('$FROM', validatedConfig.from)
+        .replace('$TO', validatedConfig.to)
       } else {
         outFile += fileExt
       }

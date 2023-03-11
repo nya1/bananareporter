@@ -26,8 +26,8 @@
 - **Multiple output formats**: output file can be a JSON, JSONL or CSV (via `--format`) _more coming soon_
 - **Configurable**: data to be imported can be filtered using the configuration file and each option can be overridden per source
 - **Sources Supported**
-  - GitLab: commits
-  - GitHub: commits
+  - [GitLab](./docs/sources/gitlab.md): commits
+  - [GitHub](./docs/sources/github.md): commits
   - todo.txt: tasks
   - **[Request a new source](https://github.com/nya1/bananareporter/issues/new?assignees=&labels=enhancement&template=new-source-request.md&title=)**
 
@@ -67,7 +67,7 @@ sources:
 bananareporter --from 2023-01-01 --to 2023-03-01 -c bananareporter.yaml
 ```
 
-In the current directory you will find the output as `bananareporter_$FROM__$TO.json`, can be changed with `--out`
+In the current directory you will find the output as `bananareporter_$FROM__$TO.json` (can be changed with `--out`)
 
 Example of output (json) with gitlab and github sources:
 
@@ -100,7 +100,7 @@ $ npm install -g bananareporter
 $ bananareporter COMMAND
 running command...
 $ bananareporter (--version)
-bananareporter/0.1.1 linux-x64 node-v16.19.0
+bananareporter/0.2.0 linux-x64 node-v16.19.0
 $ bananareporter --help [COMMAND]
 USAGE
   $ bananareporter COMMAND
@@ -159,5 +159,5 @@ EXAMPLES
   report with 138 entries saved to ./bananareporter.json
 ```
 
-_See code: [dist/commands/run/index.ts](https://github.com/nya1/bananareporter/blob/v0.1.1/dist/commands/run/index.ts)_
+_See code: [dist/commands/run/index.ts](https://github.com/nya1/bananareporter/blob/v0.2.0/dist/commands/run/index.ts)_
 <!-- commandsstop -->

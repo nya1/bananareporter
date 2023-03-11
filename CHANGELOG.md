@@ -1,3 +1,12 @@
+## [0.1.2](https://github.com/nya1/bananareporter/compare/0.1.1...0.1.2) (2023-03-11)
+
+
+### Bug Fixes
+
+* README.md typo ([2cbad01](https://github.com/nya1/bananareporter/commit/2cbad015db7dddb985bb820bb85c512f7bc15f6d))
+
+
+
 ## [0.1.1](https://github.com/nya1/bananareporter/compare/0.1.0...0.1.1) (2023-03-11)
 
 

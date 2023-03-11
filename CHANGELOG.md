@@ -1,3 +1,12 @@
+# [0.2.0](https://github.com/nya1/bananareporter/compare/0.1.2...0.2.0) (2023-03-11)
+
+
+### Features
+
+* sort report by date ASC ([#9](https://github.com/nya1/bananareporter/issues/9)) ([bfdfc58](https://github.com/nya1/bananareporter/commit/bfdfc5815d0b0325818213a7ce8ec1cefd56f858))
+
+
+
 ## [0.1.2](https://github.com/nya1/bananareporter/compare/0.1.1...0.1.2) (2023-03-11)
 
 

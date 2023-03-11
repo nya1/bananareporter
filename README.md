@@ -67,7 +67,7 @@ sources:
 bananareporter --from 2023-01-01 --to 2023-03-01 -c bananareporter.yaml
 ```
 
-In the current directory you will find the output as `bananareporter_$FROM__$TO.json`, can be cahnged with `--out`
+In the current directory you will find the output as `bananareporter_$FROM__$TO.json`, can be changed with `--out`
 
 
 # Usage

@@ -73,6 +73,6 @@ sources:
     - example:
       - ```yaml
             filters:
-            - on: '$project.path_with_namespace'
+              - on: '$project.path_with_namespace'
                 regex: '(acmecorp|spacex)'
         ```

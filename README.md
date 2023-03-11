@@ -69,6 +69,29 @@ bananareporter --from 2023-01-01 --to 2023-03-01 -c bananareporter.yaml
 
 In the current directory you will find the output as `bananareporter_$FROM__$TO.json`, can be changed with `--out`
 
+Example of output (json) with gitlab and github sources:
+
+```json
+[
+  {
+    "date": "2022-07-13T07:51:21.730Z",
+    "username": "johndoe",
+    "description": "chore: update changelog and swagger branch:work git:aa33b04",
+    "projectId": "3318214",
+    "projectName": "awesome-frontend",
+    "type": "gitlab"
+  },
+  {
+    "date": "2022-07-14T10:50:10.230Z",
+    "username": "johndoe2",
+    "description": "refactor: compare date function branch:work git:ia1f241",
+    "projectId": "928544",
+    "projectName": "awesome-backend",
+    "type": "github"
+  }
+]
+```
+
 
 # Usage
 <!-- usage -->
@@ -77,7 +100,7 @@ $ npm install -g bananareporter
 $ bananareporter COMMAND
 running command...
 $ bananareporter (--version)
-bananareporter/0.1.0 linux-x64 node-v16.19.0
+bananareporter/0.1.1 linux-x64 node-v16.19.0
 $ bananareporter --help [COMMAND]
 USAGE
   $ bananareporter COMMAND
@@ -136,5 +159,5 @@ EXAMPLES
   report with 138 entries saved to ./bananareporter.json
 ```
 
-_See code: [dist/commands/run/index.ts](https://github.com/nya1/bananareporter/blob/v0.1.0/dist/commands/run/index.ts)_
+_See code: [dist/commands/run/index.ts](https://github.com/nya1/bananareporter/blob/v0.1.1/dist/commands/run/index.ts)_
 <!-- commandsstop -->

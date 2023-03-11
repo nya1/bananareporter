@@ -144,6 +144,11 @@ report with 138 entries saved to ./bananareporter.json
       return
     }
 
+    // re order by date ASC
+    reportList.sort((a, b) => {
+      return dayjs(a.date).diff(b.date)
+    })
+
     // output
     let outputStr = ''
     // eslint-disable-next-line unicorn/prefer-switch

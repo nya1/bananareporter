@@ -74,7 +74,7 @@ Example of output (json) with gitlab and github sources:
 ```json
 [
   {
-    "date": "2022-07-13T07:51:21.730Z",
+    "date": "2023-01-13T07:51:21.730Z",
     "username": "johndoe",
     "description": "chore: update changelog and swagger branch:work git:aa33b04",
     "projectId": "3318214",
@@ -82,7 +82,7 @@ Example of output (json) with gitlab and github sources:
     "type": "gitlab"
   },
   {
-    "date": "2022-07-14T10:50:10.230Z",
+    "date": "2023-01-14T10:50:10.230Z",
     "username": "johndoe2",
     "description": "refactor: compare date function branch:work git:ia1f241",
     "projectId": "928544",

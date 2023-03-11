@@ -61,7 +61,7 @@ sources:
   #   file: './todo.txt'
 ```
 
-2. Run the reporter with a date range
+2. Run the reporter with a date range (ISO8601 date)
 
 ```sh
 bananareporter --from 2023-01-01 --to 2023-03-01 -c bananareporter.yaml

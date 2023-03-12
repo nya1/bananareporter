@@ -130,7 +130,7 @@ DESCRIPTION
   Display help for bananareporter.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.7/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.8/src/commands/help.ts)_
 
 ## `bananareporter run`
 

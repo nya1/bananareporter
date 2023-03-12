@@ -11,6 +11,7 @@ import {omit} from 'lodash'
 import {logger} from '../../util/logger'
 import {GithubIntegration} from '../../integrations/github'
 import {TodoTxtIntegration} from '../../integrations/todotxt'
+import {z} from 'zod'
 
 export default class Run extends Command {
   static description = 'Run report'
@@ -186,5 +187,14 @@ report with 138 entries saved to ./bananareporter.json
     this.log(`report with ${reportList.length} entries saved to ${outFile}`)
 
     // this.log(`run! ${flags.config} ${JSON.stringify(configContent)}`)
+  }
+
+  async catch(error: Error): Promise<void> {
+    if (error instanceof z.ZodError) {
+      const errMsg = error.issues.map(i => `${i.message}: ${i.path.join(', ')}`).join('\n')
+      throw new TypeError(`validation failed, ${errMsg}`)
+    }
+
+    throw error
   }
 }

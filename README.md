@@ -102,7 +102,7 @@ $ npm install -g bananareporter
 $ bananareporter COMMAND
 running command...
 $ bananareporter (--version)
-bananareporter/0.2.0 linux-x64 node-v16.19.0
+bananareporter/0.2.1 linux-x64 node-v16.19.0
 $ bananareporter --help [COMMAND]
 USAGE
   $ bananareporter COMMAND
@@ -161,5 +161,5 @@ EXAMPLES
   report with 138 entries saved to ./bananareporter.json
 ```
 
-_See code: [dist/commands/run/index.ts](https://github.com/nya1/bananareporter/blob/v0.2.0/dist/commands/run/index.ts)_
+_See code: [dist/commands/run/index.ts](https://github.com/nya1/bananareporter/blob/v0.2.1/dist/commands/run/index.ts)_
 <!-- commandsstop -->

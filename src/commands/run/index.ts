@@ -1,6 +1,6 @@
 import {Command, Flags} from '@oclif/core'
 import * as yaml from 'js-yaml'
-import {readFileSync, writeFileSync} from 'node:fs'
+import {readFileSync, statSync, writeFileSync} from 'node:fs'
 import path = require('node:path');
 import dayjs = require('dayjs');
 import {BananaOutputFileFormat, loadAndValidateConfig} from '../../core'
@@ -12,6 +12,7 @@ import {logger} from '../../util/logger'
 import {GithubIntegration} from '../../integrations/github'
 import {TodoTxtIntegration} from '../../integrations/todotxt'
 import {z} from 'zod'
+import {resolve} from 'node:path'
 
 export default class Run extends Command {
   static description = 'Run report'
@@ -51,7 +52,7 @@ report with 138 entries saved to ./bananareporter.json
     out: Flags.file({
       char: 'o',
       aliases: ['output'],
-      description: 'file path to save the output',
+      description: 'file path or directory to save the output',
       required: true,
       default: './bananareporter_$FROM__$TO.json',
     }),
@@ -173,6 +174,18 @@ report with 138 entries saved to ./bananareporter.json
     logger.debug(`Run.flags.out.default ${Run.flags.out.default}`)
     logger.debug(`fileExt ${fileExt}`)
     logger.debug(`outFile ${outFile}`)
+
+    // if --out was provided and it's a directory
+    // use the default file name
+    try {
+      if (statSync(outFile).isDirectory()) {
+        outFile = resolve(outFile, Run.flags.out.default as string)
+        logger.debug(`outFile is a directory, updated to ${outFile}`)
+      }
+    } catch (error) {
+      logger.debug('statSync error', error)
+    }
+
     // add file extension
     if (!outFile.endsWith(fileExt)) {
       if (outFile === Run.flags.out.default) {

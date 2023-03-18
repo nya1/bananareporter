@@ -1,3 +1,19 @@
+# [0.3.0](https://github.com/nya1/bananareporter/compare/0.2.1...0.3.0) (2023-03-18)
+
+
+### Bug Fixes
+
+* add from - to date in json output filename ([8aa7e9c](https://github.com/nya1/bananareporter/commit/8aa7e9c5b78289edd7265551851ae58806578a4d))
+* skip duplicated commits ([2468abf](https://github.com/nya1/bananareporter/commit/2468abf3713da35a3a56fbeddf73fc766f978223))
+
+
+### Features
+
+* accept directories in --out flag ([59df613](https://github.com/nya1/bananareporter/commit/59df613d29bec5597c23212f4d42fd62cbbdea0b))
+* add "id" on report object ([0b86c70](https://github.com/nya1/bananareporter/commit/0b86c70c219490f8b3b62e8af9678b4049d79aa8))
+
+
+
 ## [0.2.1](https://github.com/nya1/bananareporter/compare/0.2.0...0.2.1) (2023-03-12)
 
 

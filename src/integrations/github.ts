@@ -323,6 +323,7 @@ export class GithubIntegration extends IntegrationBase {
       const projectName = rawData.repository.name
       const description = `${rawData.commit.message} git:${rawData.sha.slice(0, 7)}`
       return {
+        id: rawData.sha,
         date: rawData.commit.committer.date,
         username: rawData.commit.committer.name,
         description,

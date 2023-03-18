@@ -74,6 +74,7 @@ Example of output (json) with gitlab and github sources:
 ```json
 [
   {
+    "id": "c12ba180bfecf45fcdcc40d6104d1f1b7ad409dc",
     "date": "2023-01-13T07:51:21.730Z",
     "username": "johndoe",
     "description": "chore: update changelog and swagger branch:work git:aa33b04",
@@ -82,8 +83,9 @@ Example of output (json) with gitlab and github sources:
     "type": "gitlab"
   },
   {
+    "id": "6e1b66a1dea89e957d8c44943f942be4874c0641",
     "date": "2023-01-14T10:50:10.230Z",
-    "username": "johndoe2",
+    "username": "johndoe",
     "description": "refactor: compare date function branch:work git:ia1f241",
     "projectId": "928544",
     "projectName": "awesome-backend",

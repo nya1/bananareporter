@@ -345,6 +345,7 @@ export class GitlabIntegration extends IntegrationBase {
       const projectName = projectDetails?.path
       const description = `${rawData.push_data.commit_title} branch:${rawData.push_data.ref} git:${rawData.push_data.commit_to.slice(0, 7)}`
       return {
+        id: `${String(rawData.push_data.commit_to)}`,
         date: rawData.created_at,
         username: rawData.author_username,
         description,

@@ -9,7 +9,7 @@
   <a href="https://oclif.io"><img src="https://img.shields.io/badge/cli-oclif-brightgreen.svg" alt="oclif"/></a>
   <a href="https://npmjs.org/package/bananareporter"><img src="https://img.shields.io/npm/v/bananareporter.svg" alt="Version"/></a>
   <a href="https://github.com/nya1/bananareporter/actions/workflows/test.yml"><img src="https://github.com/nya1/bananareporter/actions/workflows/test.yml/badge.svg" alt="Github"/></a>
-  <a href="https://npmjs.org/package/bananareporter"><img src="https://img.shields.io/npm/dw/bananareporter.svg" alt="Downloads/week"/></a>
+  <a href="https://npmjs.org/package/bananareporter"><img src="https://img.shields.io/npm/dt/bananareporter.svg" alt="Total Downloads"/></a>
   <a href="https://github.com/nya1/bananareporter/blob/main/package.json"><img src="https://img.shields.io/npm/l/bananareporter.svg" alt="License"/></a>
 </p>
 
@@ -102,7 +102,7 @@ $ npm install -g bananareporter
 $ bananareporter COMMAND
 running command...
 $ bananareporter (--version)
-bananareporter/0.2.1 linux-x64 node-v16.19.0
+bananareporter/0.3.0 linux-x64 node-v16.19.0
 $ bananareporter --help [COMMAND]
 USAGE
   $ bananareporter COMMAND
@@ -161,5 +161,5 @@ EXAMPLES
   report with 138 entries saved to ./bananareporter.json
 ```
 
-_See code: [dist/commands/run/index.ts](https://github.com/nya1/bananareporter/blob/v0.2.1/dist/commands/run/index.ts)_
+_See code: [dist/commands/run/index.ts](https://github.com/nya1/bananareporter/blob/v0.3.0/dist/commands/run/index.ts)_
 <!-- commandsstop -->

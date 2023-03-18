@@ -141,6 +141,9 @@ report with 138 entries saved to ./bananareporter.json
       reportList = reportList.concat(res)
     }
 
+    // remove any duplicates (based on "id")
+    reportList = [...new Map(reportList.map(v => [v.id, v])).values()]
+
     if (reportList.length === 0) {
       this.warn('no entries found, make sure the date range provided and the sources are correct')
       return

@@ -242,7 +242,6 @@ export class GithubIntegration extends IntegrationBase {
       let page = 1
 
       let commitList: GithubCommitItemData[] = []
-      const commitShaList = new Set<string>()
 
       while (page > 0) {
         logger.debug(`github integration working on ${page}`)
@@ -261,13 +260,7 @@ export class GithubIntegration extends IntegrationBase {
         }
 
         // eslint-disable-next-line unicorn/prefer-spread
-        commitList = commitList.concat(
-          // remove duplicate items
-          commits.items.filter(c => !commitShaList.has(c.sha)),
-        )
-        for (const c of commits.items) {
-          commitShaList.add(c.sha)
-        }
+        commitList = commitList.concat(commits.items)
 
         logger.debug(`github integration commitList ${commitList.length} (added ${commits.items.length} commits)`)
 

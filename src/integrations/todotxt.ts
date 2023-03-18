@@ -111,7 +111,7 @@ export class TodoTxtIntegration extends IntegrationBase {
       const projectName = rawData.projects?.map(p => p.replace('+', '')).join(',')
       const description = `${rawData.description}`
       return {
-        id: `${index}`,
+        id: `${this.config.file}_${index}`,
         date: rawData.completion || rawData.creation || '',
         description,
         projectName,

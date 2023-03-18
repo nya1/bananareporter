@@ -170,16 +170,23 @@ report with 138 entries saved to ./bananareporter.json
 
     const fileExt = `.${validatedConfig.format}`
     let outFile = validatedConfig.out
+    logger.debug(`Run.flags.out.default ${Run.flags.out.default}`)
+    logger.debug(`fileExt ${fileExt}`)
+    logger.debug(`outFile ${outFile}`)
     // add file extension
     if (!outFile.endsWith(fileExt)) {
       if (outFile === Run.flags.out.default) {
         outFile = outFile
         .replace(`.${Run.flags.format.default}`, fileExt)
-        .replace('$FROM', validatedConfig.from)
-        .replace('$TO', validatedConfig.to)
       } else {
         outFile += fileExt
       }
+    }
+
+    if (outFile.includes('$FROM') || outFile.includes('$TO')) {
+      outFile = outFile
+      .replace('$FROM', validatedConfig.from)
+      .replace('$TO', validatedConfig.to)
     }
 
     logger.debug(`run saving to ${outFile} with file content of size ${outputStr.length}`)

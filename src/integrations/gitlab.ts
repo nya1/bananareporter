@@ -158,6 +158,7 @@ export class GitlabIntegration extends IntegrationBase {
       let eventList: GitlabRawEventData[] = []
 
       const projectIds = new Set<number>()
+      const commitShaList = new Set<string>()
 
       while (page > 0) {
         logger.debug(`gitlab integration working on ${page}`)
@@ -175,12 +176,17 @@ export class GitlabIntegration extends IntegrationBase {
           break
         }
 
+        // eslint-disable-next-line unicorn/prefer-spread
+        eventList = eventList.concat(
+          // remove duplicated commits
+          events.filter(e => !commitShaList.has(e.push_data.commit_to)),
+        )
+
         for (const e of events) {
+          commitShaList.add(e.push_data.commit_to)
           projectIds.add(e.project_id)
         }
 
-        // eslint-disable-next-line unicorn/prefer-spread
-        eventList = eventList.concat(events)
         logger.debug(`gitlab integration eventList ${eventList.length} (added ${events.length} events)`)
 
         page += 1

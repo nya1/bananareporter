@@ -1,3 +1,12 @@
+## [0.3.1](https://github.com/nya1/bananareporter/compare/0.3.0...0.3.1) (2023-03-18)
+
+
+### Bug Fixes
+
+* remove duplicated entries ([2458859](https://github.com/nya1/bananareporter/commit/2458859d2c0003056dd3c6a9f6bfd90ed56af81d))
+
+
+
 # [0.3.0](https://github.com/nya1/bananareporter/compare/0.2.1...0.3.0) (2023-03-18)
 
 

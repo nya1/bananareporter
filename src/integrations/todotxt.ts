@@ -102,15 +102,16 @@ export class TodoTxtIntegration extends IntegrationBase {
         })
       }
 
-      const formattedData = filteredTasks.map(e => this.toBananaReporterObj(e))
+      const formattedData = filteredTasks.map((e, i) => this.toBananaReporterObj(e, i))
 
       return formattedData
     }
 
-    toBananaReporterObj(rawData: Task): CommonBananaReporterObj {
+    toBananaReporterObj(rawData: Task, index?: number): CommonBananaReporterObj {
       const projectName = rawData.projects?.map(p => p.replace('+', '')).join(',')
       const description = `${rawData.description}`
       return {
+        id: `${index}`,
         date: rawData.completion || rawData.creation || '',
         description,
         projectName,

@@ -5,13 +5,18 @@ export const SourceType = z.enum(['gitlab', 'github', 'todo.txt'])
 export type SourceType = z.infer<typeof SourceType>;
 
 export interface CommonBananaReporterObj {
+    id: string;
     date: string;
     description: string;
     username?: string;
     projectId?: string;
     projectName?: string;
     type: SourceType,
-    __raw: any
+    /**
+     * the raw source object,
+     * included only when --include-raw-object is provided
+     */
+    __raw?: any
 }
 // TODO improve base integration
 export abstract class IntegrationBase {

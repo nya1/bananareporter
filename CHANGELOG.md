@@ -1,3 +1,12 @@
+## [0.3.2](https://github.com/nya1/bananareporter/compare/0.3.1...0.3.2) (2023-03-19)
+
+
+### Bug Fixes
+
+* **deps:** bump @oclif/core from 2.6.2 to 2.6.4 ([#16](https://github.com/nya1/bananareporter/issues/16)) ([33b7460](https://github.com/nya1/bananareporter/commit/33b7460aac4599670d4feb2eaedd6f18febf0d43))
+
+
+
 ## [0.3.1](https://github.com/nya1/bananareporter/compare/0.3.0...0.3.1) (2023-03-18)
 
 

@@ -1,3 +1,12 @@
+## [0.3.3](https://github.com/nya1/bananareporter/compare/0.3.2...0.3.3) (2023-03-26)
+
+
+### Bug Fixes
+
+* **deps:** bump papaparse from 5.4.0 to 5.4.1 ([3ad24d2](https://github.com/nya1/bananareporter/commit/3ad24d27c4e7d73000bebb95d4bea7c3795817d8))
+
+
+
 ## [0.3.2](https://github.com/nya1/bananareporter/compare/0.3.1...0.3.2) (2023-03-19)
 
 

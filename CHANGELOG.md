@@ -1,3 +1,30 @@
+## [0.3.3](https://github.com/nya1/bananareporter/compare/0.3.2...0.3.3) (2023-03-26)
+
+
+### Bug Fixes
+
+* **deps:** bump papaparse from 5.4.0 to 5.4.1 ([3ad24d2](https://github.com/nya1/bananareporter/commit/3ad24d27c4e7d73000bebb95d4bea7c3795817d8))
+
+
+
+## [0.3.2](https://github.com/nya1/bananareporter/compare/0.3.1...0.3.2) (2023-03-19)
+
+
+### Bug Fixes
+
+* **deps:** bump @oclif/core from 2.6.2 to 2.6.4 ([#16](https://github.com/nya1/bananareporter/issues/16)) ([33b7460](https://github.com/nya1/bananareporter/commit/33b7460aac4599670d4feb2eaedd6f18febf0d43))
+
+
+
+## [0.3.1](https://github.com/nya1/bananareporter/compare/0.3.0...0.3.1) (2023-03-18)
+
+
+### Bug Fixes
+
+* remove duplicated entries ([2458859](https://github.com/nya1/bananareporter/commit/2458859d2c0003056dd3c6a9f6bfd90ed56af81d))
+
+
+
 # [0.3.0](https://github.com/nya1/bananareporter/compare/0.2.1...0.3.0) (2023-03-18)
 
 

@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/nya1/bananareporter/compare/0.3.3...0.4.0) (2023-06-17)
+
+
+### Features
+
+* add git-cli source type to load local repositories ([#24](https://github.com/nya1/bananareporter/issues/24)) ([f8ae15b](https://github.com/nya1/bananareporter/commit/f8ae15bcc3cf1b45ded34aefdc8276ffc56ef99a))
+
+
+
 ## [0.3.3](https://github.com/nya1/bananareporter/compare/0.3.2...0.3.3) (2023-03-26)
 
 

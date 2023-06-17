@@ -1,6 +1,6 @@
 {
   "name": "bananareporter",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Easily generate a report from multiple sources",
   "author": "nya1",
   "bin": {

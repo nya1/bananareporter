@@ -3,7 +3,7 @@
 <img src="docs/assets/banana-reporter-logo.png" alt="Banana Reporter Logo" height="70px"/>
 </p>
 <h1 align="center">Banana Reporter</h1>
-<p align="center">Create a report in CSV, JSON and JSONL from multiple sources (e.g. GitLab, GitHub, todo.txt etc.)</p>
+<p align="center">Create a report in CSV, JSON and JSONL from multiple sources (GitLab, GitHub, Git local repository and todo.txt)</p>
 
 <p align="center">
   <a href="https://oclif.io"><img src="https://img.shields.io/badge/cli-oclif-brightgreen.svg" alt="oclif"/></a>
@@ -28,6 +28,7 @@
 - **Sources Supported**
   - [GitLab](./docs/sources/gitlab.md): commits
   - [GitHub](./docs/sources/github.md): commits
+  - [Git CLI (local repository)](./docs/sources/git-clit.md): commits
   - todo.txt: tasks
   - **[Request a new source](https://github.com/nya1/bananareporter/issues/new?assignees=&labels=enhancement&template=new-source-request.md&title=)**
 

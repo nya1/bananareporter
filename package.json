@@ -26,6 +26,7 @@
     "lodash": "^4.17.21",
     "object-path": "^0.11.8",
     "papaparse": "^5.4.1",
+    "shelljs": "^0.8.5",
     "winston": "^3.8.2",
     "zod": "^3.21.4"
   },
@@ -38,6 +39,7 @@
     "@types/node-fetch": "^2.6.2",
     "@types/object-path": "^0.11.1",
     "@types/papaparse": "^5.3.7",
+    "@types/shelljs": "^0.8.12",
     "chai": "^4",
     "eslint": "^7.32.0",
     "eslint-config-oclif": "^4",

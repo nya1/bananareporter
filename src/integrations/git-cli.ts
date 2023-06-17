@@ -130,10 +130,12 @@ export class GitCliIntegration extends IntegrationBase {
     rawData: GitCliLog,
     _index?: number,
   ): CommonBananaReporterObj {
+    const description = `${rawData.commitMessage} branch:${rawData.branch} git:${rawData.commit.slice(0, 7)}`
+
     return {
       id: rawData.commit,
       date: dayjs.unix(rawData.dateUnix).toISOString(),
-      description: rawData.commitMessage,
+      description: description,
       projectName: rawData.projectName,
       type: GitCliIntegration.type,
       __raw: this.bananaReporterConfig.includeRawObject ? rawData : undefined,

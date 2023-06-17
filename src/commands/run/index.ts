@@ -13,6 +13,7 @@ import {GithubIntegration} from '../../integrations/github'
 import {TodoTxtIntegration} from '../../integrations/todotxt'
 import {z} from 'zod'
 import {resolve} from 'node:path'
+import {GitCliIntegration} from '../../integrations/git-cli'
 
 export default class Run extends Command {
   static description = 'Run report'
@@ -116,6 +117,14 @@ report with 138 entries saved to ./bananareporter.json
 
       case SourceType.Enum.github: {
         const integrationLoaded = new GithubIntegration(s, validatedConfig)
+        // eslint-disable-next-line no-await-in-loop
+        res = await integrationLoaded.fetchData()
+
+        break
+      }
+
+      case SourceType.Enum['git-cli']: {
+        const integrationLoaded = new GitCliIntegration(s, validatedConfig)
         // eslint-disable-next-line no-await-in-loop
         res = await integrationLoaded.fetchData()
 

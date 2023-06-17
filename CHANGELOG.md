@@ -1,3 +1,12 @@
+## [0.4.3](https://github.com/nya1/bananareporter/compare/0.4.2...0.4.3) (2023-06-17)
+
+
+### Bug Fixes
+
+* **git-cli:** commit message escaping ([c01a3c3](https://github.com/nya1/bananareporter/commit/c01a3c3e4190bf678d97734010af2aeadc435a90))
+
+
+
 ## [0.4.2](https://github.com/nya1/bananareporter/compare/0.4.1...0.4.2) (2023-06-17)
 
 

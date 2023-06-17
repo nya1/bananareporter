@@ -28,7 +28,7 @@
 - **Sources Supported**
   - [GitLab](./docs/sources/gitlab.md): commits
   - [GitHub](./docs/sources/github.md): commits
-  - [Git CLI (local repository)](./docs/sources/git-clit.md): commits
+  - [Git CLI (local repository)](./docs/sources/git-cli.md): commits
   - todo.txt: tasks
   - **[Request a new source](https://github.com/nya1/bananareporter/issues/new?assignees=&labels=enhancement&template=new-source-request.md&title=)**
 

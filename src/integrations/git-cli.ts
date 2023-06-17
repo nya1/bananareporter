@@ -87,7 +87,8 @@ export class GitCliIntegration extends IntegrationBase {
       this.config.path
     } --no-pager log --branches="*" --author="${
       this.config.authorUsername
-    }" --reverse --no-merges --source --format='{"commit": "%H","author": "%an","dateUnix": %at,"commitMessage": "%s","branch": "%S"},' --after="${fromDate.toISOString()}" --before="${toDate.toISOString()}"`
+    // hash - author - date unix - commit message - branch
+    }" --reverse --no-merges --source --format='%H~~~~~%an~~~~~%at~~~~~%s~~~~~%S>%n%n' --after="${fromDate.toISOString()}" --before="${toDate.toISOString()}"`
     , {
       silent: true,
     })
@@ -98,10 +99,25 @@ export class GitCliIntegration extends IntegrationBase {
       )
     }
 
-    const parsedOutput = gitLogCommand?.stdout ? `[${gitLogCommand.stdout.slice(0, -2)}]` : '[]'
-    logger.debug('git log parsed output', {parsedOutput})
+    const gitLogJson: GitCliLog[] = [];
 
-    const gitLogJson: GitCliLog[] = JSON.parse(parsedOutput)
+    if (gitLogCommand.stdout) {
+      for (const line of gitLogCommand.stdout.split('>\n\n')) {
+        const splitGit = line.split('~~~~~')
+        logger.debug('git log', {splitGit})
+        if (splitGit.length !== 5) {
+          continue
+        }
+
+        gitLogJson.push({
+          commit: splitGit[0].replace(/\n/g, ''),
+          author: splitGit[1],
+          dateUnix: Number(splitGit[2]),
+          commitMessage: splitGit[3],
+          branch: splitGit[4],
+        })
+      }
+    }
 
     return gitLogJson.map((e, i) => {
       // add project name

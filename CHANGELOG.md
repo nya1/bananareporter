@@ -1,3 +1,16 @@
+## [0.4.2](https://github.com/nya1/bananareporter/compare/0.4.1...0.4.2) (2023-06-17)
+
+
+### Bug Fixes
+
+* readme typo ([7567325](https://github.com/nya1/bananareporter/commit/7567325b08c1783c483a6a86e81febd09599fe4c))
+
+
+
+## [0.4.1](https://github.com/nya1/bananareporter/compare/0.4.0...0.4.1) (2023-06-17)
+
+
+
 # [0.4.0](https://github.com/nya1/bananareporter/compare/0.3.3...0.4.0) (2023-06-17)
 
 

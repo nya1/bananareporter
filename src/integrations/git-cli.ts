@@ -87,7 +87,7 @@ export class GitCliIntegration extends IntegrationBase {
       this.config.path
     } --no-pager log --branches="*" --author="${
       this.config.authorUsername
-    }" --reverse --source --format='{"commit": "%H","author": "%an","dateUnix": %at,"commitMessage": "%s","branch": "%S"},' --after="${fromDate.toISOString()}" --before="${toDate.toISOString()}"`
+    }" --reverse --no-merges --source --format='{"commit": "%H","author": "%an","dateUnix": %at,"commitMessage": "%s","branch": "%S"},' --after="${fromDate.toISOString()}" --before="${toDate.toISOString()}"`
     , {
       silent: true,
     })
